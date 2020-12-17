@@ -37,6 +37,4 @@ class RecipeNetworkEntity(
     @SerializedName("date_updated")
     var dateUpdated: String? = null,
 
-
-
 )
