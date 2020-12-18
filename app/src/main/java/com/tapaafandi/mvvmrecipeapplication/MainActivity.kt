@@ -4,10 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.google.gson.GsonBuilder
-import com.tapaafandi.mvvmrecipeapplication.domain.model.Recipe
 import com.tapaafandi.mvvmrecipeapplication.network.RecipeService
-import com.tapaafandi.mvvmrecipeapplication.network.model.RecipeNetworkEntity
-import com.tapaafandi.mvvmrecipeapplication.network.model.RecipeNetworkMapper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
