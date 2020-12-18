@@ -13,7 +13,7 @@ data class Recipe(
         var sourceUrl: String? = null,
         var description: String? = null,
         var cookingInstructions: String? = null,
-        var ingredients: List<String>? = null,
+        var ingredients: List<String> = listOf(),
         var dateAdded: String? = null,
         var dateUpdated: String? = null,
 ): Parcelable
