@@ -1,4 +1,4 @@
-package com.tapaafandi.mvvmrecipeapplication
+package com.tapaafandi.mvvmrecipeapplication.presentation
 
 import android.app.Application
 
