@@ -15,15 +15,17 @@ import javax.inject.Named
 class RecipeListViewModel
 @ViewModelInject
 constructor(
-    private val repository: RecipeRepository,
-    private @Named("auth_token") val token: String,
-): ViewModel(){
+        private val repository: RecipeRepository,
+        private @Named("auth_token") val token: String,
+) : ViewModel() {
 
     val recipes: MutableState<List<Recipe>> = mutableStateOf(listOf())
 
     val query = mutableStateOf("")
 
     val selectedCategory: MutableState<FoodCategory?> = mutableStateOf(null)
+
+    var categoryScrollPosition: Float = 0f
 
     init {
         newSearch()
@@ -32,9 +34,9 @@ constructor(
     fun newSearch() {
         viewModelScope.launch {
             val result = repository.search(
-                token = token,
-                page = 1,
-                query = query.value
+                    token = token,
+                    page = 1,
+                    query = query.value
             )
             recipes.value = result
         }
@@ -48,5 +50,9 @@ constructor(
         val newCategory = getFoodCategory(category)
         selectedCategory.value = newCategory
         onQueryChanged(category)
+    }
+
+    fun onChangeCategoryScrollPosition(position: Float) {
+        categoryScrollPosition = position
     }
 }
